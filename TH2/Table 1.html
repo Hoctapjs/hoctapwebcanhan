@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table 1</title>
+    <style>
+        table{
+            width: 600px;
+            height: 400px;
+        }
+        #header {
+            color: white;
+        }
+        caption {
+            color: darkblue;
+        }
+    </style>
+</head>
+<body>
+    <table border = "5">
+        <caption>
+            <h2>Ví Dụ 2</h2>
+        </caption>
+        <tr bgcolor = blue align="center" valign="middle" id="header">
+            <th>Header 1</th>
+            <th>Header 2</th>
+            <th>Header 3</th>
+        </tr>
+
+        <tr>
+            <td>Row 1/ Col1</td>
+            <td valign="middle">Row 1/ Col1</td>
+            <td valign="bottom">Row 1/ Col1</td>
+        </tr>
+
+        <tr align="center" valign="middle">
+            <td style="background-color: aquamarine;">Row 2/ Col1</td>
+            <td style="background-color: chartreuse;" colspan="2">Row 2/ Col 2</td>
+        </tr>
+    </table>
+</body>
+</html>
