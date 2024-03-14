@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test ma hoa ceasar</title>
+</head>
+
+<body>
+
+    <label for="inputText">Nhap van ban:</label>
+    <input type="text" id="inputText" placeholder="TUIDEPTRAI">
+
+    <button onclick="encryptAndDecrypt()">MaHoa/GiaiMa</button>
+
+    <h3>KetQua:</h3>
+    <div id="content"></div>
+
+    <script>
+        function encryptAndDecrypt() {
+            let inputText = document.getElementById("inputText").value;
+            let shiftAmount = 1;
+
+            // Xóa bỏ kết quả trước đó (nếu có)
+            document.getElementById("content").innerHTML = "";
+
+            for (let i = 1; i < 26; i++) {
+                shiftAmount = i;
+                let encryptedText = encrypt(inputText, shiftAmount);
+                let decryptedText = decrypt(encryptedText, shiftAmount);
+
+                var p = document.createElement("p");
+                var textNode = document.createTextNode("So Key: " + i + " Van ban Ma Hoa: " + encryptedText);
+                p.appendChild(textNode);
+                document.getElementById("content").appendChild(p);
+            }
+        }
+
+        function encrypt(text, shift) {
+            let result = "";
+            for (let i = 0; i < text.length; i++) {
+                let char = text[i];
+                if (/[a-zA-Z]/.test(char)) {
+                    let offset = char.toLowerCase() === char ? 'a'.charCodeAt(0) : 'A'.charCodeAt(0);
+                    result += String.fromCharCode((char.charCodeAt(0) - offset + shift) % 26 + offset);
+                } else {
+                    result += char;
+                }
+            }
+            return result;
+        }
+
+        function decrypt(ciphertext, shift) {
+            return encrypt(ciphertext, -shift);
+        }
+    </script>
+</body>
+
+</html>

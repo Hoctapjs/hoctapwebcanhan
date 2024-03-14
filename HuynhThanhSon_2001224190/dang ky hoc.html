@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>đăng ký học</title>
+    <style>
+        p {
+            text-align: center;
+            font-weight: bold;
+        }
+
+        html,
+        select,
+        span {
+            font-size: 20px;
+        }
+
+        td {
+            padding: 10px;
+        }
+
+        td,
+        input {
+            font-size: 20px;
+        }
+
+        .tieude {
+            color: blue;
+        }
+
+        h1 {
+            color: red;
+            text-align: center;
+            font-size: 70px;
+        }
+
+        .khungngoai {
+            border: 2px solid black;
+            padding: 20px;
+            margin: 0 auto;
+            width: 700px;
+        }
+
+        table {
+            margin-left: 50px;
+        }
+
+        span {
+            font-weight: bold;
+        }
+
+        
+    </style>
+</head>
+
+<body>
+    <div class="khungngoai">
+        <h1>ĐĂNG KÝ HỌC</h1>
+        <p>Bạn vui lòng điền đầy đủ thông tin vào các ô bên dưới để hoàn tất việc gởi đơn đăng ký học công ty TNHH VCL
+        </p>
+        <form action="" method="get">
+            <h2 class="tieude">THÔNG TIN CÁ NHÂN</h2>
+            <table>
+                <tr>
+                    <td>Họ Tên</td>
+                    <td><input type="text" name="ten"></td>
+                </tr>
+                <tr>
+                    <td>Ngày Sinh</td>
+                    <td>
+                        <select name="ngaysinh" id="doball">
+                            <script>
+                                var i = 1;
+                                for (let i = 1; i <= 31; i++) {
+                                    document.write("<option>" + i + "</option>");
+                                }
+                            </script>
+                        </select>
+                        <span>/</span>
+                        <select name="thangsinh" id="doball">
+                            <script>
+                                var i = 1;
+                                for (let i = 1; i <= 12; i++) {
+                                    document.write("<option>" + i + "</option>");
+                                }
+                            </script>
+                        </select>
+                        <span>/</span>
+                        <select name="namsinh" id="doball">
+                            <script>
+                                var i = 1;
+                                for (let i = 2000; i <= 2024; i++) {
+                                    document.write("<option>" + i + "</option>");
+                                }
+                            </script>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Giới tính</td>
+                    <td>
+                        <select name="gioitinh" id="">
+                            <option value="Nam">Nam</option>
+                            <option value="Nữ">Nữ</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Điên Thoại</td>
+                    <td><input type="text" name="dienthoai"></td>
+                </tr>
+            </table>
+            <table>
+                <h2 class="tieude">THÔNG TIN ĐĂNG KÝ XÉT TUYỂN</h2>
+                <tr class="phiaduoi">
+                    <td>Địa chỉ liên hệ</td>
+                    <td><input type="text" name="diachi"></td>
+                </tr>
+                <tr class="phiaduoi">
+                    <td></td>
+                    <td>
+                        <input type="submit" value="Đăng Ký">
+                    </td>
+                </tr>
+            </table>
+        </form>
+
+    </div>
+
+
+
+
+
+
+</body>
+
+</html>

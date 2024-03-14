@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bt4</title>
+    <style>
+        table {
+            border-collapse: collapse; /*gộp khoảng cách ngoài của các ô trong table lại*/
+        }
+        
+        td, th {
+            padding: 20px;
+            border: 1px solid black;
+            font-size: 20px;
+        }
+
+        #t1, #t2 {
+            width: 700px;
+        }
+
+        #sea-header {
+            background-color: aqua;
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        #blue-header {
+            background-color: blue;
+            text-align: center;
+            vertical-align: middle;
+            color: white;
+        }
+
+        input[type="button"] {
+            height: 50px;
+        }
+
+        input[type="text"] {
+            height: 60px;
+            width: 350px;
+        }
+
+        .nhaptext {
+            padding: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <table id="t1">
+        <tr id="sea-header">
+            <td colspan="2">
+                <h2>THÊM SINH VIÊN</h2>
+            </td>
+        </tr>
+        <tr>
+            <td>Mã Sinh viên</td>
+            <td class="nhaptext"><input type="text"></td>
+        </tr>
+        <tr>
+            <td>Họ Tên</td>
+            <td class="nhaptext"><input type="text"></td>
+        </tr>
+        <tr>
+            <td>Ngày Sinh</td>
+            <td><input type="date"></td>
+        </tr>
+        <tr>
+            <td>Hình</td>
+            <td><input type="file"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <input type="button" value="ADD">
+                <input type="button" value="UPDATE">
+                <input type="button" value="SAVE">
+            </td>
+        </tr>
+    </table>
+
+
+
+    <table id="t2">
+        <tr id="blue-header">
+            <th colspan="5">
+                <h2>DANH SÁCH SINH VIÊN</h2>
+            </th>
+        </tr>
+        <tr>
+            <th>STT</th>
+            <th>MA SV</th>
+            <th>Họ Tên</th>
+            <th>Ngày Sinh</th>
+            <th>Hinh</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>01001009</td>
+            <td>Nguyễn Hương Lan</td>
+            <td>01/01/2000</td>
+            <td>h1.jpg</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>01001009</td>
+            <td>Nguyễn Hương Lan</td>
+            <td>01/01/2000</td>
+            <td>h1.jpg</td>
+        </tr>
+    </table>
+
+</body>
+
+</html>

@@ -8,6 +8,7 @@
         table{
             width: 600px;
             height: 400px;
+            border-collapse: collapse;
         }
         #header {
             color: white;
@@ -15,14 +16,18 @@
         caption {
             color: darkblue;
         }
+
+        td, th {
+            border: 2px solid black;
+        }
     </style>
 </head>
 <body>
-    <table border = "5">
+    <table style="border: 5px solid black;">
         <caption>
             <h2>Ví Dụ 2</h2>
         </caption>
-        <tr bgcolor = blue align="center" valign="middle" id="header">
+        <tr style="background-color: blue; vertical-align: middle;" align="center" id="header">
             <th>Header 1</th>
             <th>Header 2</th>
             <th>Header 3</th>
@@ -30,11 +35,11 @@
 
         <tr>
             <td>Row 1/ Col1</td>
-            <td valign="middle">Row 1/ Col1</td>
-            <td valign="bottom">Row 1/ Col1</td>
+            <td style="vertical-align: middle;">Row 1/ Col1</td>
+            <td style="vertical-align: bottom;">Row 1/ Col1</td>
         </tr>
 
-        <tr align="center" valign="middle">
+        <tr style="text-align: center; vertical-align: middle;">
             <td style="background-color: aquamarine;">Row 2/ Col1</td>
             <td style="background-color: chartreuse;" colspan="2">Row 2/ Col 2</td>
         </tr>

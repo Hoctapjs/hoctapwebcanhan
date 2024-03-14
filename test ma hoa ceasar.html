@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test ma hoa ceasar</title>
+</head>
+
+<body>
+
+    <label for="inputText">Nhap van ban:</label>
+    <input type="text" id="inputText" placeholder="TUIDEPTRAI">
+
+    <label for="shiftAmount">Nhap khoa k:</label>
+    <input type="number" id="shiftAmount" placeholder="3" min="1">
+
+    <button onclick="encryptAndDecrypt()">MaHoa/GiaiMa</button>
+
+    <h3>KetQua:</h3>
+    <p id="resultText"></p>
+
+    <script>
+        function encryptAndDecrypt() {
+            let inputText = document.getElementById("inputText").value;
+            let shiftAmount = parseInt(document.getElementById("shiftAmount").value);
+
+            if (!inputText || isNaN(shiftAmount)) {
+                alert("Vui long nhap dau vao hop le.");
+                return;
+            }
+
+            let encryptedText = encrypt(inputText, shiftAmount);
+
+            let decryptedText = decrypt(encryptedText, shiftAmount);
+
+            document.getElementById("resultText").innerHTML = "Van ban Ma Hoa: " + encryptedText + "<br>Van ban Goc: " + decryptedText;
+        }
+
+        function encrypt(text, shift) {
+            let result = "";
+            for (let i = 0; i < text.length; i++) {
+                let char = text[i];
+                if (/[a-zA-Z]/.test(char)) {
+                    let offset = char.toLowerCase() === char ? 'a'.charCodeAt(0) : 'A'.charCodeAt(0);
+                    result += String.fromCharCode((char.charCodeAt(0) - offset + shift) % 26 + offset);
+                } else {
+                    result += char;
+                }
+            }
+            return result;
+        }
+
+        function decrypt(ciphertext, shift) {
+            return encrypt(ciphertext, -shift);
+        }
+    </script>
+</body>
+
+</html>
